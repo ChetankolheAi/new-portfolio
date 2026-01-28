@@ -1,0 +1,5 @@
+@import "tailwindcss";
+body {cursor: url(https://ani.cursors-4u.net/games/gam-16/gam1566.cur), auto !important;}
+button{
+    cursor: pointer;
+} 
