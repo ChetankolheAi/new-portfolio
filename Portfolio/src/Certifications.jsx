@@ -1,6 +1,20 @@
 import React from "react";
 import { FaCertificate } from "react-icons/fa";
-
+const ProjectButton = ({ children }) => (
+  <button
+    className="
+      px-5 py-2 rounded-full
+      bg-gradient-to-br from-white/20 via-white/10 to-white/5
+      backdrop-blur-md
+      border border-white/30
+      text-white text-sm
+      hover:bg-white hover:text-black
+      transition
+    "
+  >
+    {children}
+  </button>
+);
 /* 🔹 Data – just add more objects here */
 const certifications = [
   {
@@ -8,24 +22,35 @@ const certifications = [
     description:
       "Completed hands-on training covering MongoDB, Express, React, and Node.js with real-world project experience.",
     issuer: "EY GDS / AICTE",
+     live:"https://drive.google.com/file/d/1liOhz574MrP6m8_k1hHU6ww3yagpY3as/view?usp=sharing"
   },
   {
     title: "Data Structures & Algorithms",
     description:
-      "Strong foundation in problem-solving, algorithms, and data structures using C++.",
+      "Built a strong foundation in Data Structures and Algorithms through consistent practice and structured learning using C++ over a 1-year period.",
     issuer: "Code Help/Love Babbar",
-  },
-  {
-    title:"NPTL Python For DataScience",
-    description:
-      "Gained hands-on experience in Python programming,visualization using libraries like NumPy, Pandas, and Matplotlib.",
-    issuer: "NPTL",
+     live:"https://drive.google.com/file/d/1CZDhXYd4eSmob9Ojlu40pOyfzjP6vqT0/view?usp=sharing"
   },
   {
     title:"Core Java DSA OS",
     description:
       'Completed comprehensive training in Core Java covering OOP concepts, exception handling, collections framework, multithreading basics, and JVM fundamentals',
     issuer: "Core 2 Web",
+    live:"https://drive.google.com/file/d/1b1xjf0bP6YGry8Zpa5CeewVhbHHru9OH/view?usp=sharing"
+  },
+  {
+    title:"Rubicon -Django Training Program",
+    description:
+     "Completed the Rubicon Django Training Program, gaining hands-on experience in building web applications using Django.",
+    issuer: "Rubicon Foundation",
+    live:"https://drive.google.com/file/d/1OsVbBPvNgsOXAleITsbnsvxLN4yTxDrn/view?usp=drive_link"
+  },
+  {
+    title:"NPTL Python For DataScience",
+    description:
+    "Gained hands-on experience in Python programming,visualization using libraries like NumPy, Pandas, and Matplotlib.",
+    issuer: "NPTL",
+    live:"https://drive.google.com/file/d/1fpiWPRU1CaCd_xUEswGpNk6QZcNzpFaT/view?usp=sharing"
   },
   // 👉 Add more certifications here
 ];
@@ -84,6 +109,17 @@ function Certification() {
               <p className="text-gray-400 text-sm">
                 Issued by: <span className="text-white">{cert.issuer}</span>
               </p>
+              {cert.live && (
+              <a
+                href={cert.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-4"
+              >
+                <ProjectButton>View Certificate</ProjectButton>
+              </a>
+            )}
+
             </GlassCard>
           ))}
         </div>
